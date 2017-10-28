@@ -15,10 +15,13 @@ import 'rxjs/add/operator/catch';
 })
 export class AppComponent {
   title = 'app';
-  allValues={};
+  allValues=[];
   constructor(private http: Http){
-    this.allValues={
-      "GOOG":{
+    this.allValues=
+      [
+        {
+        "tickerSymbol":"GOOG",
+        "tickerName":"Google",
         "currentValue":0.00,
         "threeDayChangeInValue":0.00,
         "twoDayChangeInValue":0.00,
@@ -27,20 +30,190 @@ export class AppComponent {
         "strongBuy":"No"
       
       },
-      "MU":{
+      {
+        "tickerSymbol":"MU",
+        "tickerName":"Micron Tech",
         "currentValue":0.00,
         "threeDayChangeInValue":0.00,
         "twoDayChangeInValue":0.00,
         "oneDayChaneInValue":0.00,
         "Buy":"No",
         "strongBuy":"No"
-      
+      },
+      {
+        "tickerSymbol":"AMD",
+        "tickerName":"Amd",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      }
+      ,
+      {
+        "tickerSymbol":"SQ",
+        "tickerName":"Square",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"PYPL",
+        "tickerName":"Paypal",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      }
+      ,
+      {
+        "tickerSymbol":"NVDA",
+        "tickerName":"Nividia",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"STM",
+        "tickerName":"Stm",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"TWTR",
+        "tickerName":"Twitter",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"CERN",
+        "tickerName":"Cerner",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"BABA",
+        "tickerName":"Micron Tech",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"AAPL",
+        "tickerName":"Apple",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"AMZN",
+        "tickerName":"Amazon",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"SNAP",
+        "tickerName":"SnapChat",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      }
+      ,
+      {
+        "tickerSymbol":"NFLX",
+        "tickerName":"Netflix",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"V",
+        "tickerName":"Visa",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"MA",
+        "tickerName":"MasterCard",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"IDRA",
+        "tickerName":"Idera",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
+      },
+      {
+        "tickerSymbol":"GERN",
+        "tickerName":"Geron",
+        "currentValue":0.00,
+        "threeDayChangeInValue":0.00,
+        "twoDayChangeInValue":0.00,
+        "oneDayChaneInValue":0.00,
+        "Buy":"No",
+        "strongBuy":"No"
       }
       
-    }
-  
+      
+    ]
   }
-  getValuesFromAPI(stockTicker: string){
+
+  refreshAll(){
+    for(let i = 0; i< this.allValues.length; i++){
+      this.getValuesFromAPI(this.allValues[i].tickerSymbol);
+    }
+  }
+  getValuesFromAPI(stockTicker: string){debugger;
     this.callAPI(stockTicker).subscribe(
       (success)=>{
         debugger;
@@ -62,20 +235,27 @@ debugger;
     let twoDayDifference=this.getDifference(response[OneDayBackDate]["4. close"], response[TwoDaysBackDate]["4. close"]);
     let threeDayDifference=this.getDifference(response[TwoDaysBackDate]["4. close"], response[ThreeDaysBackDate]["4. close"]);
 
-    this.allValues[stockTicker].currentValue = response[currentDate]["4. close"];
-    this.allValues[stockTicker].oneDayChangeInValue = oneDayDifference.toFixed(2);
-    this.allValues[stockTicker].twoDayChangeInValue = twoDayDifference.toFixed(2);
-    this.allValues[stockTicker].threeDayChangeInValue = threeDayDifference.toFixed(2);
-
-    if(oneDayDifference<0 && twoDayDifference<0){
-      this.allValues[stockTicker].Buy = "Yes";
-      if(threeDayDifference<0){
-        this.allValues[stockTicker].strongBuy = "Yes";
+    for(let i = 0; i<this.allValues.length; i++){
+      if(this.allValues[i].tickerSymbol === stockTicker){
+        this.allValues[i].currentValue = response[currentDate]["4. close"];
+        this.allValues[i].oneDayChangeInValue = oneDayDifference.toFixed(2);
+        this.allValues[i].twoDayChangeInValue = twoDayDifference.toFixed(2);
+        this.allValues[i].threeDayChangeInValue = threeDayDifference.toFixed(2);
+    
+        if(oneDayDifference<0 && twoDayDifference<0){
+          this.allValues[i].Buy = "Yes";
+          if(threeDayDifference<0){
+            this.allValues[i].strongBuy = "Yes";
+          }
+        }
       }
     }
+
+    
   }
   
 
+  
   getDifference(current, oneday){
     return (parseFloat(current) - parseFloat(oneday));
   }
@@ -118,6 +298,10 @@ debugger;
       if(date.getDay() === 2){
         date.setDate(date.getDate() - 4)
       }
+      else
+      if(date.getDay() === 1){
+        date.setDate(date.getDate() - 4)
+      }
       else{
         date.setDate(date.getDate() - 2)
       }
@@ -136,6 +320,10 @@ debugger;
       else
       if(date.getDay() === 2){
         date.setDate(date.getDate() - 4)
+      }
+      else
+      if(date.getDay() === 1){
+        date.setDate(date.getDate() - 5)
       }
       else{
         date.setDate(date.getDate() - 3)
