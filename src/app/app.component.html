@@ -1,3 +1,6 @@
+<div class="flex-item-left">
+  <button class="btn" (click)="refreshAll()">Refresh All</button>
+</div>
 <div class="flex-container-id">
   <div class="flex-item-left">
     Stock Name
@@ -19,6 +22,10 @@
   </div>
 
   <div class="flex-item-left">
+    Total Change (3 days)
+  </div>
+
+  <div class="flex-item-left">
     Buy
   </div>
 
@@ -26,144 +33,64 @@
     Strong Buy
   </div>
 
-  <div class="flex-item-left">
-      <button class="btn" (click)="refreshAll()">Refresh All</button>
-      </div>
+
 </div>
 
 
-<div *ngFor = "let ticker of allValues">
-<div class="flex-container-id">
+<div *ngFor="let ticker of allStockValues">
+  <div class="flex-container-id">
     <div class="flex-item-left">
-        {{ticker.tickerName}} - ({{ticker.tickerSymbol}})
+      {{ticker.tickerName}} - ({{ticker.tickerSymbol}})
+    </div>
+
+    <div class="flex-item-left">
+      {{ticker.currentValue}}
+    </div>
+    <div class="flex-item-left">
+      {{ticker.oneDayChangeInValue}}
+    </div>
+
+    <div class="flex-item-left">
+      {{ticker.twoDayChangeInValue}}
+    </div>
+
+    <div class="flex-item-left">
+      {{ticker.threeDayChangeInValue}}
+    </div>
+
+    <div class="flex-item-left">
+      <div class="plain" *ngIf="ticker.fallin3Days >0">
+        {{ticker.fallin3Days}}
+      </div>
+      <div class="lightred" *ngIf="ticker.fallin3Days < 0">
+        {{ticker.fallin3Days}}
       </div>
 
-      <div class="flex-item-left">
-          {{ticker.currentValue}}
-         </div>
-         <div class="flex-item-left">
-           {{ticker.oneDayChangeInValue}}
-         </div>
-       
-         <div class="flex-item-left">
-           {{ticker.twoDayChangeInValue}}
-         </div>
-       
-         <div class="flex-item-left">
-           {{ticker.threeDayChangeInValue}}
-         </div>
-       
-         <div class="flex-item-left">
-           <div class="plain" *ngIf="ticker.Buy === 'No'">
-             {{ticker.Buy}}
-           </div>
-       
-           <div class="lightred" *ngIf="ticker.Buy === 'Yes'">
-             {{ticker.Buy}}
-           </div>
-         </div>
-
-         <div class="flex-item-left">
-            <div class="plain" *ngIf="ticker.strongBuy === 'No'">
-              {{ticker.strongBuy}}
-            </div>
-        
-            <div class="darkred" *ngIf="ticker.strongBuy === 'Yes'">
-              {{ticker.strongBuy}}
-            </div>
-          </div>
-        
-          
-    
-    </div>
-  <!--<div class="flex-item-left">
-    Google (GOOG)
-  </div>
-
-  <div class="flex-item-left">
-   {{allValues.GOOG.currentValue}}
-  </div>
-  <div class="flex-item-left">
-    {{allValues.GOOG.oneDayChangeInValue}}
-  </div>
-
-  <div class="flex-item-left">
-    {{allValues.GOOG.twoDayChangeInValue}}
-  </div>
-
-  <div class="flex-item-left">
-    {{allValues.GOOG.threeDayChangeInValue}}
-  </div>
-
-  <div class="flex-item-left">
-    <div class="plain" *ngIf="allValues.GOOG.Buy === 'No'">
-      {{allValues.GOOG.Buy}}
     </div>
 
-    <div class="lightred" *ngIf="allValues.GOOG.Buy === 'Yes'">
-      {{allValues.GOOG.Buy}}
-    </div>
-  </div>
+    <div class="flex-item-left">
+      <div class="plain" *ngIf="ticker.Buy === 'No'">
+        {{ticker.Buy}}
+      </div>
 
-  <div class="flex-item-left">
-    <div class="plain" *ngIf="allValues.GOOG.strongBuy === 'No'">
-      {{allValues.GOOG.strongBuy}}
-    </div>
-
-    <div class="darkred" *ngIf="allValues.GOOG.strongBuy === 'Yes'">
-      {{allValues.GOOG.strongBuy}}
-    </div>
-  </div>
-
-  <div class="flex-item-left">
-  <button class="btn" (click)="getValuesFromAPI('GOOG')">Get Latest Value</button>
-  </div>
-</div>
-
-
-<div class="flex-container-id">
-  <div class="flex-item-left">
-    Micron technology (MU)
-  </div>
-
-  <div class="flex-item-left">
-   {{allValues.MU.currentValue}}
-  </div>
-  <div class="flex-item-left">
-    {{allValues.MU.oneDayChangeInValue}}
-  </div>
-
-  <div class="flex-item-left">
-    {{allValues.MU.twoDayChangeInValue}}
-  </div>
-
-  <div class="flex-item-left">
-    {{allValues.MU.threeDayChangeInValue}}
-  </div>
-
-  <div class="flex-item-left">
-    <div class="plain" *ngIf="allValues.MU.Buy === 'No'">
-      {{allValues.MU.Buy}}
+      <div class="lightred" *ngIf="ticker.Buy === 'Yes'">
+        {{ticker.Buy}}
+      </div>
     </div>
 
-    <div class="lightred" *ngIf="allValues.MU.Buy === 'Yes'">
-      {{allValues.MU.Buy}}
+    <div class="flex-item-left">
+      <div class="plain" *ngIf="ticker.strongBuy === 'No'">
+        {{ticker.strongBuy}}
+      </div>
+
+      <div class="darkred" *ngIf="ticker.strongBuy === 'Yes'">
+        {{ticker.strongBuy}}
+      </div>
     </div>
+
+
+
   </div>
 
-  <div class="flex-item-left">
-    <div class="plain" *ngIf="allValues.MU.strongBuy === 'No'">
-      {{allValues.MU.strongBuy}}
-    </div>
-
-    <div class="darkred" *ngIf="allValues.MU.strongBuy === 'Yes'">
-      {{allValues.MU.strongBuy}}
-    </div>
-  </div>
-
-  <div class="flex-item-left">
-  <button class="btn" (click)="getValuesFromAPI('MU')">Get Latest Value</button>
-  </div>
-</div>-->
 
 </div>

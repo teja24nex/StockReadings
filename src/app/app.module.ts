@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { StockConfiguration } from './app.StockConfiguration';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [StockConfiguration],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
